@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require('mongoose');
-const keys = require('./key.js');
+const secret = require('./secret.js');
 const endpoints = require('./endpoints.js')
 
 const app = express();
@@ -9,12 +9,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
+// Delegate api calls to another file
 app.use('/endpoints', endpoints)
 
 
 //database connection
-mongoose.connect(keys.mongodb.dbURI)
+mongoose.connect(secret.mongodb.dbURI)
 mongoose.Promise = global.Promise;
 
 const db = mongoose.connection;

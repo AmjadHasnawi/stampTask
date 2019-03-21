@@ -1,33 +1,33 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//create profile schema and model for the teacher
+//create product schema and model
 const ProductSchema = new Schema({
-	productCode: {
-		type: String,
-		required: true
+	  productCode: {
+			type: String,
+			required: true
     },
     productName: {
-		type: String,
-		required: true
+			type: String,
+			required: true
     },
     price: {
-		type: Number,
-		required: true
+			type: Number,
+			required: true
     },
     quantity: {
-		type: Number,
-		required: false
-	},
+			type: Number,
+			required: true
+	  },
     image: {
-		type: String,
-		required: false,
-		default:'https://www.eigenheimreal.com/avatar_mann.png'
-	},
+			type: String,
+			required: false,
+			default:'https://www.eigenheimreal.com/avatar_mann.png'
+	  },
     date: {
-		type: Date,
-		default: Date.now
-	}
+			type: Date,
+			default: Date.now
+	  }
 });
 
 
