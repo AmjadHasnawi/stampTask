@@ -1,0 +1,19 @@
+nav  {
+  a img {
+    width: 150px;
+  }
+
+  div {
+    justify-content: flex-end;
+    ul li a {
+      color: white;
+      border: 1px solid #007bff;
+      &:hover {
+        // color: darken(white, 20%);
+        border: 1px solid white;
+        border-radius: 10px;
+        transition: 0.4s;
+      }
+    }
+  }
+}

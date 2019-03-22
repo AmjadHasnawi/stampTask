@@ -1,0 +1,40 @@
+$white : white;
+
+footer {
+  background-color:#001527;
+  color: $white;
+  div {
+    padding-bottom: 10px;
+    margin: 10px auto 0 auto;
+  }
+}
+
+.footer {
+  width: 90%;
+  padding-top: 20px; 
+}
+
+.footer-center {
+  text-align: center;
+}
+
+i {
+  font-size: 25px;
+  margin: 0px 15px 0px 15px;
+  &:hover {
+    color: darkred;
+    transition: 0.3s;
+  }
+}
+
+.fa-heart {
+  font-size: 1em;
+  color: red;
+  margin: 5px;
+}
+
+hr {
+  background-color: $white;
+  width: 95%;
+  margin: 50px auto 0 auto;
+}
