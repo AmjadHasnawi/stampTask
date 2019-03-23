@@ -1,4 +1,8 @@
+$main-color: #001527;
+$white: white;
+
 nav  {
+  background-color: $main-color;
   a img {
     width: 150px;
   }
@@ -6,11 +10,10 @@ nav  {
   div {
     justify-content: flex-end;
     ul li a {
-      color: white;
-      border: 1px solid #007bff;
+      color: $white;
+      border: 1px solid $main-color;
       &:hover {
-        // color: darken(white, 20%);
-        border: 1px solid white;
+        border: 1px solid $white;
         border-radius: 10px;
         transition: 0.4s;
       }

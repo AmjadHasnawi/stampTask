@@ -1,27 +1,29 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ProductsModule } from './modules/products/products.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './shared/components/home/home.component';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
+import { FooterComponent } from './sharedComponents/components/footer/footer.component';
+import { HomeComponent } from './sharedComponents/components/home/home.component';
+import { NavbarComponent } from './sharedComponents/components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ProductsListComponent,
-    ProductDetailsComponent,
-    NavbarComponent,
     FooterComponent,
+    HomeComponent,
+    NavbarComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    ProductsModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [

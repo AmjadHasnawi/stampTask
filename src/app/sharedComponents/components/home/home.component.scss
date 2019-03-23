@@ -1,0 +1,30 @@
+@mixin allDivs {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 50%;
+  text-align: center; 
+  padding-top: 20px;
+}
+
+
+#first-div {
+  @include allDivs();
+  margin: auto;
+  p {
+    font-size: 1.3em
+  }
+}
+
+#second-div {
+  @include allDivs();
+  margin: 50px auto 50px auto;
+  a {
+    text-decoration: none;
+    display: inline-block;
+  }
+}
+
+img {
+  width: 10em;
+  margin: auto; 
+  display: block;
+}
