@@ -9,8 +9,7 @@
     "build:prod": "npm run build:clean && ngc && npm run webpack-prod && npm run build:clean",
     "build:clean": "del-cli src/**/*.js src/**/*.js.map src/**/*.ngsummary.json src/**/*.metadata.json src/**/**/*.ngfactory.ts src/**/*.ngstyle.ts src/**/*.shim.ts",
     "serve": "lite-server",
-    "start": "node server.js",
-    "heroku-postbuild": "webpack -p"
+    "server": "nodemon server"
   },
   "author": "Amjad",
   "license": "MIT",
