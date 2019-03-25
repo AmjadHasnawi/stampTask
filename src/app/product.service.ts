@@ -22,7 +22,6 @@ export class ProductService {
 
 
   getProducts (): Observable<Product[]> {
-    console.log("Hi");
     return this.http.get<Product[]>(this.ApiUrl + '/getProducts')
       .pipe(
         tap(_ => console.log("Done..")),

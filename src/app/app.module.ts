@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from './modules/products/products.module';
@@ -11,19 +13,23 @@ import { FooterComponent } from './sharedComponents/components/footer/footer.com
 import { HomeComponent } from './sharedComponents/components/home/home.component';
 import { NavbarComponent } from './sharedComponents/components/navbar/navbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HomeComponent,
     NavbarComponent,
+    
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     ProductsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [

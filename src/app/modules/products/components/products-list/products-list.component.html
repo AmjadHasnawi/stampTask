@@ -1,15 +1,63 @@
-<div class="row">
-  <div *ngFor="let product of products" class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
-    <div  class="card" style="margin-bottom: 20px">
-      <img class="card-img-top" src={{product.image}} alt="Card image" style="width: 100%" />
-      <div class="card-body">
-        <p class="card-title"> الأستاذ:{{product.productCode}}{{product.lastname}}</p>
-        <p class="card-text">الدورة: {{product.productName}}</p>
-        <p class="card-text">سعر الدورة: {{product.price}} دينار</p>
-        <p class="card-text">مدة الدورة: {{product.quantity}}</p>
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-dark border-right" id="sidebar-wrapper">
+      <div style="color: white" class="sidebar-heading">Hot Links</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-dark">Home</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark">Shortcuts</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark">Overview</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark">Events</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark">Profile</a>
+        <a href="#" class="list-group-item list-group-item-action bg-dark">Status</a>
+      </div>
+    </div>
+
+<div id="spinner" *ngIf="products.length == 0">
+  <div>
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+
+<div id="container" *ngIf="products.length != 0" >
+  <div id="filterBar">
+    <p>Filters: </p>
+    <p>Price Filtering: </p>
+    <select #priceFiltering (change)="filtration(priceFiltering.value)" style="width: 5em">
+      <option value="all">All</option>
+      <option value="lessThan5">&lt; 5 &euro;</option>
+      <option value="between">5 - 15&euro;</option>
+      <option value="moreThan15">	&#62; 15&euro;</option>
+    </select>
+    <p> Price Sorting: </p>
+    <select #priceSorting (change)="filtration(priceSorting.value)">
+      <option value="all">All</option>
+      <option value="ascending">Ascending</option>
+      <option value="descending">Descending</option>
+    </select>
+    <p> Availability: </p>
+    <select #availability (change)="filtration(availability.value)">
+      <option value="all">All</option>
+      <option value="available">Available</option>
+      <option value="unavailable">Unavailable</option>
+    </select>
+    <input id="search" type="text" class="form-control" placeholder=" Search..." (keyup)="search()" />
+  </div>
+  <div id="myDIV" class="row" >
+    <div *ngFor="let product of filteredProducts" id="child" class="col-xl-3 col-lg-3 col-md-4 col-sm-12" (click)="navigate(product)" >
+      <div  class="card border-secondary gridCenter">
+        <img class="card-img-top" src={{product.image}} alt="Card image" style="width: 100%" />
+        <div class="card-body">
+          <p class="card-title"><i class="fas fa-barcode fa-fw"></i>Code: {{product.productCode}}</p>
+          <p class="card-text"><i class="fas fa-file-signature fa-fw"></i>Product: {{product.productName}}</p>
+          <p class="card-text"><i class="fas fa-tags fa-fw"></i>Price: {{product.price}}&euro;</p>
+          <p class="card-text"><i class="fas fa-warehouse fa-fw"></i>Quantity: {{product.quantity}}</p>
+          <button type="button" class="btn btn-dark d-block w-100"><i style="color: white" class="fas fa-shopping-cart"></i> Add to cart</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-
+<!-- <i class="fas fa-euro-sign"></i>
+<i class="fas fa-coins"></i> -->
