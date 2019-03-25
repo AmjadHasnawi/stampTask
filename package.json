@@ -10,7 +10,7 @@
     "build:clean": "del-cli src/**/*.js src/**/*.js.map src/**/*.ngsummary.json src/**/*.metadata.json src/**/**/*.ngfactory.ts src/**/*.ngstyle.ts src/**/*.shim.ts",
     "serve": "lite-server",
     "start": "node server.js",
-    "postinstall": "webpack -p"
+    "heroku-postbuild": "webpack -p"
   },
   "author": "Amjad",
   "license": "MIT",
