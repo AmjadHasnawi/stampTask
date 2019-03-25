@@ -10,7 +10,11 @@ const ProductSchema = new Schema({
     productName: {
 			type: String,
 			required: true
-    },
+		},
+		description: {
+			type: String,
+			required: true
+		},
     price: {
 			type: Number,
 			required: true
@@ -22,7 +26,7 @@ const ProductSchema = new Schema({
     image: {
 			type: String,
 			required: false,
-			default:'https://www.eigenheimreal.com/avatar_mann.png'
+			default:'https://getmystamp.com/assets/dist/img/bg/security.png'
 	  },
     date: {
 			type: Date,

@@ -36,7 +36,7 @@ $transition: 0.3s;
 #spinner {
   width: 5%;
   height: 30em; 
-  margin: 10em auto auto auto;
+  margin: 15em auto auto auto;
 }
 
 #filterBar {
@@ -49,12 +49,11 @@ $transition: 0.3s;
   p {
     display: inline; 
     margin: 5px; 
-    cursor: pointer;
   }
 }
 
 select {
-  width: 7em; 
+  width: 8em; 
   border-radius: 5px; 
   font-size: 0.9em; 
   outline: none;
@@ -64,17 +63,11 @@ select {
 #search {
   width: 20%; 
   margin-left: 10px;
-  transition: 0.5s;
   display: inline-block;
-  &:focus {
-    width: 35%;
-    transition: 0.5s;
-  }
 }
 
-#container {
+#myDIV {
   min-height: 1000px;
-  min-width: 85%;
 }
 
 i {
@@ -106,7 +99,7 @@ i {
   .list-group-item {
     color: white;
     &:hover {
-      background-color: darken(#343a40, 10%) !important;
+      background-color: darken(red, 40%) !important;
       transition: 0.5s;
     }
   }
@@ -133,4 +126,8 @@ i {
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+}
+
+.rad {
+  background-color: darken(red, 30%);
 }

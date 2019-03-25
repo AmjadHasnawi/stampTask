@@ -1,0 +1,25 @@
+.card {
+  margin: 1em;
+  // padding: 1em;
+}
+
+img {
+  width: 100%;
+  margin: 5px;
+  box-shadow: 1px 1px 20px grey;
+  border-radius: 50%;
+  animation: example 1s linear 0s infinite alternate;
+}
+
+// #details {
+//   width: 0;
+//   // display: none;
+//   // transition: 0.5s;
+// }
+
+@keyframes example {
+  0%   {box-shadow: 1px 1px 0px black;}
+  25%  {width: 1px 1px 20px black;}
+  50%  {width: 1px 1px 40px black;}
+  100% {width: 1px 1px 80px black;}
+}

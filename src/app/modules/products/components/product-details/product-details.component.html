@@ -1,3 +1,18 @@
-<p>
-  product-details works!
-</p>
+<div class="card bg-light text-dark">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+        <img src={{product.image}} alt="The product image">
+      </div>
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+        <div id="details" >
+        <h1>Product: {{product.productName}}</h1>
+        <p>Product Code: {{product.productCode}}</p>
+        <p>Price: {{product.price}}&euro;</p>
+        <p>Quantity in stock: {{product.quantity}}</p>
+        <p>Description: {{product.description}}</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
