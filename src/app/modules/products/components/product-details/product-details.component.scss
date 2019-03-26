@@ -49,8 +49,9 @@ i {
 #button{
   margin-top: 5em !important;
   button {
-    width: 50% !important; 
-    margin: auto; 
+    width: 40% !important;
+    display: inline-block !important;
+    margin: 0 5% 0 5%;
     i {
       color: white;
     }

@@ -11,10 +11,6 @@ const ProductSchema = new Schema({
 			type: String,
 			required: true
 		},
-		description: {
-			type: String,
-			required: true
-		},
     price: {
 			type: Number,
 			required: true
@@ -27,7 +23,11 @@ const ProductSchema = new Schema({
 			type: String,
 			required: false,
 			default:'https://getmystamp.com/assets/dist/img/bg/security.png'
-	  },
+		},
+		description: {
+			type: String,
+			required: true
+		},
     date: {
 			type: Date,
 			default: Date.now

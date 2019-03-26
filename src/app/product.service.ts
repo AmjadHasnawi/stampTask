@@ -19,7 +19,7 @@ export class ProductService {
     private http: HttpClient,
     ) { }
 
-
+  // Get all the products from the database
   getProducts (): Observable<Product[]> {
     return this.http.get<Product[]>(this.ApiUrl + '/getProducts')
       .pipe(
@@ -27,7 +27,7 @@ export class ProductService {
         catchError(this.handleError('getProducts', []))
       );
   }
-
+  // To catch errors
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
     
@@ -39,22 +39,28 @@ export class ProductService {
     };
   }
   // Edit a product
-  applyChanges(modifiedProduct: Product) {
-    console.log("BE", modifiedProduct);
+  applyChanges(modifiedProduct: Product): Observable<Product> {
     return this.http.put<Product>(this.ApiUrl + '/editProduct', modifiedProduct )
       .pipe(
         tap(_ => console.log("cool")),
-        catchError(this.handleError('editProduct', []))
+        catchError(this.handleError<Product>('editProduct'))
       );
   }
-
-  createProduct(newProduct: Product) {
-    console.log("BE",newProduct);
+  // Create a new product
+  createProduct(newProduct: Product): Observable<Product> {
+    console.log("BE", newProduct);
     return this.http.post<Product>(this.ApiUrl + '/addProduct', newProduct )
     .pipe(
       tap(_ => console.log("cool")),
-      catchError(this.handleError('addProduct', []))
+      catchError(this.handleError<Product>('addProduct'))
     );
   }
-
+  // Delete a product
+  deleteProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.ApiUrl + '/deleteProduct', product)
+      .pipe(
+        tap(_ => console.log("Done..")),
+        catchError(this.handleError<Product>('deleteProduct'))
+      );
+  }
 }

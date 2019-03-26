@@ -11,7 +11,6 @@ router.post('/addProduct', (req, res) => {
     productName: req.body.productName,
     price: req.body.price,
     quantity: req.body.quantity,
-    image: req.body.image,
     description: req.body.description
   });
   product.save().then((product) => {
@@ -27,7 +26,7 @@ router.get('/getProducts', (req, res) => {
 })
 
 // Delete a product by its code (product code)
-router.delete('/deleteProduct', (req, res) => {
+router.post('/deleteProduct', (req, res) => {
   Product.findOneAndDelete({productCode: req.body.productCode})
   .then((product) => {
     res.send(product)
@@ -37,15 +36,15 @@ router.delete('/deleteProduct', (req, res) => {
 
 // Edit an existing product
 router.put('/editProduct', (req, res) => {
-  console.log("server", req.body);
   let productCode = req.body.productCode;
   let productName = req.body.productName;
   let price = req.body.price;
   let quantity = req.body.quantity;
-  let description = req.body.description;
   let image = req.body.image;
+  let description = req.body.description;
+
   Product.findOneAndUpdate({productCode: productCode}, 
-    {productName: productName, price: price, quantity: quantity, description: description, image: image})
+    {productName: productName, price: price, quantity: quantity, image: image, description: description})
     .then((product) => {
       res.send(product)
     });

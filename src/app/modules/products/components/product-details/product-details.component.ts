@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DataService } from "./../../../../data.service";
 import { ProductService } from './../../../../product.service'
@@ -18,7 +19,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private data: DataService,
-    private productService: ProductService) { }
+    private productService: ProductService,
+    private router : Router) { }
 
   ngOnInit() {
     // Get the value of the product from the shared service
@@ -30,9 +32,15 @@ export class ProductDetailsComponent implements OnInit {
   }
   // Apply changes to the product
   applyChanges() {
-    console.log("FE", this.product);
     this.editStatus = false;
     this.productService.applyChanges(this.product)
-    .subscribe(product => console.log(product) );
+    .subscribe(product => console.log(product));
   }
+
+  deleteProduct() {
+    this.productService.deleteProduct(this.product)
+    .subscribe(product => console.log(product));
+    this.router.navigate(['products'])
+  }
+
 }

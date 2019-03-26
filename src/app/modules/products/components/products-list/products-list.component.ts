@@ -15,7 +15,7 @@ import { Product } from './../../../../product';
 export class ProductsListComponent implements OnInit {
   products: Product[] = [];
   // A copy of products array; to not affect the original products array during filtering
-  filteredProducts: Product[] = this.products;
+  filteredProducts: Product[] = this.products.slice();
   
   constructor(
     private productService: ProductService,

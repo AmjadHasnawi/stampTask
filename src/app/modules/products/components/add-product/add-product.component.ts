@@ -13,9 +13,9 @@ import { Product } from './../../../../product';
   styleUrls: ['./add-product.component.scss']
 })
 export class AddProductComponent implements OnInit {
-  storage: any = {}
-  image : any;
-  url: string;
+  // storage: any = {}
+  // image : any;
+  // url: string;
   product: Product = {
     productCode: '',
     productName: '',
@@ -33,8 +33,18 @@ export class AddProductComponent implements OnInit {
   createProduct() {
     console.log("FE", this.product);
     this.productService.createProduct(this.product)
-    .subscribe((product: Product) => console.log(product))
+    .subscribe(product => console.log(product))
+    this.product = {
+      productCode: '',
+      productName: '',
+      price: null,
+      quantity: null,
+      description: "",
+      image: "https://getmystamp.com/assets/dist/img/bg/security.png"
+    };
   }
+
+
 
   // Save an image before uploading it
   // saveImage(event: any) {
