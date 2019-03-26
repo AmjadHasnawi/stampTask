@@ -33,7 +33,7 @@ export class AddProductComponent implements OnInit {
   createProduct() {
     console.log("FE", this.product);
     this.productService.createProduct(this.product)
-    .subscribe((product: any) => console.log(product))
+    .subscribe((product: Product) => console.log(product))
   }
 
   // Save an image before uploading it

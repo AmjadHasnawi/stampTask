@@ -40,6 +40,7 @@ export class ProductService {
   }
   // Edit a product
   applyChanges(modifiedProduct: Product) {
+    console.log("BE", modifiedProduct);
     return this.http.put<Product>(this.ApiUrl + '/editProduct', modifiedProduct )
       .pipe(
         tap(_ => console.log("cool")),

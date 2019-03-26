@@ -30,6 +30,7 @@ export class ProductDetailsComponent implements OnInit {
   }
   // Apply changes to the product
   applyChanges() {
+    console.log("FE", this.product);
     this.editStatus = false;
     this.productService.applyChanges(this.product)
     .subscribe(product => console.log(product) );

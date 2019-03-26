@@ -37,13 +37,15 @@ router.delete('/deleteProduct', (req, res) => {
 
 // Edit an existing product
 router.put('/editProduct', (req, res) => {
+  console.log("server", req.body);
   let productCode = req.body.productCode;
   let productName = req.body.productName;
   let price = req.body.price;
   let quantity = req.body.quantity;
   let description = req.body.description;
+  let image = req.body.image;
   Product.findOneAndUpdate({productCode: productCode}, 
-    {productName: productName, price: price, quantity: quantity, description: description})
+    {productName: productName, price: price, quantity: quantity, description: description, image: image})
     .then((product) => {
       res.send(product)
     });
