@@ -5,11 +5,14 @@ const Product = require('./database/product')
 // API calls
 // Add a new product
 router.post('/addProduct', (req, res) => {
+  console.log("Server", req.body);
   const product = new Product({
     productCode: req.body.productCode,
     productName: req.body.productName,
     price: req.body.price,
-    quantity: req.body.quantity
+    quantity: req.body.quantity,
+    image: req.body.image,
+    description: req.body.description
   });
   product.save().then((product) => {
     res.send(product);
@@ -38,8 +41,9 @@ router.put('/editProduct', (req, res) => {
   let productName = req.body.productName;
   let price = req.body.price;
   let quantity = req.body.quantity;
+  let description = req.body.description;
   Product.findOneAndUpdate({productCode: productCode}, 
-    {productName: productName, price: price, quantity: quantity})
+    {productName: productName, price: price, quantity: quantity, description: description})
     .then((product) => {
       res.send(product)
     });

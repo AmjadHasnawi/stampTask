@@ -57,13 +57,17 @@ select {
   border-radius: 5px; 
   font-size: 0.9em; 
   outline: none;
-  transition: 0.5s;
 }
 
 #search {
   width: 20%; 
   margin-left: 10px;
   display: inline-block;
+  transition: 0.5s;
+  &:focus {
+    width: 40%;
+    transition: 0.5s
+  }
 }
 
 #myDIV {

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div><b><span>Product Code: </span></b><input  [(ngModel)]="product.productCode" type="text" class="form-control" placeholder="Ex: 4559..." /></div>
+      <div><b><span>Product Name: </span></b><input [(ngModel)]="product.productName" type="text" class="form-control" placeholder="Ex: Stamp1..." /></div>
+      <div><b><span>Price(&euro;):  </span></b><input [(ngModel)]="product.price" type="text" class="form-control" placeholder="Ex: 35&euro;..."  /></div>
+      <div><b><span>Quantity in stock: </span></b><input [(ngModel)]="product.quantity" type="text" class="form-control" placeholder="Ex: 20..."  /></div>
+      <div><b><span>Description: </span></b><input [(ngModel)]="product.description" type="text" class="form-control" placeholder="Ex: This is..."  /></div>
+      <!-- <div class="custom-file mb-3">
+        <input type="file" class="custom-file-input" id="customFile" name="filename" #Image (change)="saveImage($event)" >
+        <label class="custom-file-label" for="customFile">Choose file</label>
+      </div> -->
+      <!-- <button id="upload" type="button" class="btn btn-success d-block" (click)="upload()" ><i class="fas fa-upload"></i> Upload image</button> -->
+      <div id="button">
+        <button type="button" class="btn btn-info d-block w-50" ><i class="far fa-edit" (click)="createProduct()" ></i> Create product</button>
+      </div>
+    </div>
+  </div>
+</div>

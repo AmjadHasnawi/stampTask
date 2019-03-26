@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ProductsModule } from './modules/products/products.module';
@@ -25,11 +26,12 @@ import { NavbarComponent } from './sharedComponents/components/navbar/navbar.com
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
     ProductsModule,
     HttpClientModule,
     HttpModule,
-    BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [

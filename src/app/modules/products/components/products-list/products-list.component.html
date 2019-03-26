@@ -1,5 +1,4 @@
-<div class="d-flex" id="wrapper">
-  <!-- Sidebar -->
+<!-- <div class="d-flex" id="wrapper">
   <div class="rad border-right" id="sidebar-wrapper">
     <div style="color: white" class="sidebar-heading rad">Hot Links</div>
     <div class="list-group list-group-flush">
@@ -10,7 +9,7 @@
       <a href="#" class="list-group-item list-group-item-action rad">Profile</a>
       <a href="#" class="list-group-item list-group-item-action rad">Status</a>
     </div>
-  </div>
+  </div> -->
 
   <div id="spinner" *ngIf="products.length == 0">
     <div>
@@ -40,7 +39,7 @@
         <option value="available">Available</option>
         <option value="unavailable">Unavailable</option>
       </select>
-      <!-- <input id="search" type="text" class="form-control" placeholder=" Search..." (keyup)="search()" /> -->
+      <input id="search" type="text" class="form-control" placeholder=" Search..." (keyup)="search()" />
     </div>
     <div id="myDIV" class="row" >
       <div id="child" *ngFor="let product of filteredProducts"  class="col-xl-3 col-lg-3 col-md-4 col-sm-12" >
@@ -57,4 +56,4 @@
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->

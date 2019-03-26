@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
-import { ProductService } from './../../../../product.service'
-import { FiltrationService } from './../../../../filtration.service'
 import { DataService } from "./../../../../data.service";
+import { FiltrationService } from './../../../../filtration.service'
+import { ProductService } from './../../../../product.service'
 
 import { Product } from './../../../../product';
 
@@ -19,7 +18,7 @@ export class ProductsListComponent implements OnInit {
   filteredProducts: Product[] = this.products;
   
   constructor(
-    private productsService: ProductService,
+    private productService: ProductService,
     private filtrationService: FiltrationService,
     private data: DataService,
     private router : Router) { }
@@ -30,7 +29,7 @@ export class ProductsListComponent implements OnInit {
 
   // To fetch all the products
   getProducts() {
-    this.productsService.getProducts()
+    this.productService.getProducts()
     .subscribe(products => {
       this.products = products;
       this.filteredProducts = products.slice();
@@ -53,7 +52,7 @@ export class ProductsListComponent implements OnInit {
     this.filtrationService.search();
   }
 
-  // To change the product in the shared service and navigate to the  product-details 
+  // To change the product in the shared service and navigate to the product-details 
   productDetails(product: Product) {
     this.data.changeProduct(product);
     this.router.navigate(['productDetails'])

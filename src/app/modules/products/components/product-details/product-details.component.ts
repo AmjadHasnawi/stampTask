@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DataService } from "./../../../../data.service";
+import { ProductService } from './../../../../product.service'
 
 import { Product } from './../../../../product';
 
@@ -13,27 +14,24 @@ declare let $ :any;
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product;
-  
-  constructor(private data: DataService) { }
+  editStatus: boolean = false;
+
+  constructor(
+    private data: DataService,
+    private productService: ProductService) { }
 
   ngOnInit() {
+    // Get the value of the product from the shared service
     this.data.currentProduct.subscribe(product => this.product = product)
   }
-  // mouseEnter() {
-  //   $("#details").css({
-  //     // "width": "100%",
-  //     // "display": "block",
-  //     // "transition": "0.5s" 
-  //     "animation-name": "example",
-  //     "animation-duration": "4s",
-  //   })
-  // }
-
-  // mouseLeave() {
-  //   $("#details").css({
-  //     "width": "0",
-  //     "display": "none",
-  //     "transition": "0.5s" 
-  //   })
-  // }
+  // To give the user the ability to edit the product
+  edit() {
+    this.editStatus = true;
+  }
+  // Apply changes to the product
+  applyChanges() {
+    this.editStatus = false;
+    this.productService.applyChanges(this.product)
+    .subscribe(product => console.log(product) );
+  }
 }

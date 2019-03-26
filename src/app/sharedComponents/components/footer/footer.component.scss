@@ -21,11 +21,42 @@ footer {
 i {
   font-size: 25px;
   margin: 0px 15px 0px 15px;
-  &:hover {
-    color: darkred;
-    transition: 0.3s;
-  }
+  // &:hover {
+  //   color: darkred;
+  //   transition: 0.3s;
+  // }
 }
+
+.fa-facebook-f:hover {
+  color: #3b5998;
+  transition: 0.3s;
+}
+
+.fa-twitter:hover {
+  color: #1da1f2;
+  transition: 0.3s;
+}
+
+.fa-instagram:hover {
+  color: #c13584;
+  transition: 0.3s;
+}
+
+.fa-youtube:hover {
+  color: #ff0000;
+  transition: 0.3s;
+}
+
+.fa-whatsapp:hover {
+  color: #34aa1d;
+  transition: 0.3s;
+}
+
+.fa-envelope:hover {
+  color: #ec2a19cc;
+  transition: 0.3s;
+}
+
 
 .fa-heart {
   font-size: 1em;
