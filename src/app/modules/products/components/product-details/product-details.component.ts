@@ -5,6 +5,7 @@ import { DataService } from "./../../../../data.service";
 import { ProductService } from './../../../../product.service'
 
 import { Product } from './../../../../product';
+import { stringify } from 'querystring';
 
 declare let $ :any;
 
@@ -25,6 +26,9 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
     // Get the value of the product from the shared service
     this.data.currentProduct.subscribe(product => this.product = product)
+    if (!this.product) {
+      this.product = JSON.parse((localStorage.getItem("product")));
+    }
   }
   // To give the user the ability to edit the product
   edit() {
@@ -36,7 +40,7 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.applyChanges(this.product)
     .subscribe(product => console.log(product));
   }
-
+  // Delete a product
   deleteProduct() {
     this.productService.deleteProduct(this.product)
     .subscribe(product => console.log(product));

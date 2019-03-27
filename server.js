@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require('mongoose');
-const secret = require('./secrets.js/index.js');
+const secret = require('./dsa.js');
 const endpoints = require('./endpoints.js')
 
 const app = express();

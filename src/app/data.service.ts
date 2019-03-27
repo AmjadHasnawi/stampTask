@@ -15,6 +15,7 @@ export class DataService {
   constructor() { }
 
   changeProduct(product: Product) {
+    localStorage.setItem("product", JSON.stringify(product))
     this.productSource.next(product)
   }
 }

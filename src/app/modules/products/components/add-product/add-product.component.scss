@@ -1,9 +1,11 @@
 .container {
-  width: 40%;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 35%;
   margin: 50px auto 50px auto;
 }
 
 .card-body {
+  box-shadow: 1px 1px 10px black;
   p, div {
     margin: 20px;
   }
@@ -15,9 +17,11 @@ span {
 
 
 #button {
-  margin-top: 50px;
+  margin-top: 30px;
   button{
-    margin: auto;
+  width: 50%;
+  display: block; 
+  margin: auto;
   }
 }
 
@@ -29,4 +33,27 @@ span {
   width: 92.5%; 
   margin-top: -10px; 
   margin-bottom: 50px
+}
+
+form {
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px black; 
+  h2 {
+    text-align: center; 
+    margin-bottom: 1em
+  }
+}
+
+mat-form-field {
+  display: block;
+}
+
+.fa-clipboard-list {
+  margin-bottom: 10px;
+}
+
+#tfo { 
+  text-align: left !important;
 }
