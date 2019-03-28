@@ -1,53 +1,33 @@
-<!-- <div class="container">
-  <div class="card">
-    <div class="card-body">
-      <div><b><span>Product Code: </span></b><input  [(ngModel)]="product.productCode" type="text" class="form-control" placeholder="Enter product code" /></div>
-      <div><b><span>Product Name: </span></b><input [(ngModel)]="product.productName" type="text" class="form-control" placeholder="Enter product name"  /></div>
-      <div><b><span>Price(&euro;):  </span></b><input [(ngModel)]="product.price" type="text" class="form-control" placeholder="Enter product price"  /></div>
-      <div><b><span>Quantity in stock: </span></b><input [(ngModel)]="product.quantity" type="text" class="form-control" placeholder="Enter Product quantity" /></div>
-      <div><b><span>Description: </span></b><input [(ngModel)]="product.description" type="text" class="form-control" placeholder="Enter Product description"   /></div> -->
-      <!-- <div class="custom-file mb-3">
-        <input type="file" class="custom-file-input" id="customFile" name="filename" #Image (change)="saveImage($event)" >
-        <label class="custom-file-label" for="customFile">Choose file</label>
-      </div> -->
-      <!-- <button id="upload" type="button" class="btn btn-success d-block" (click)="upload()" ><i class="fas fa-upload"></i> Upload image</button> -->
-      <!-- <div id="button">
-        <button type="button" class="btn btn-primary d-block w-50" (click)="createProduct()"><i class="far fa-edit" ></i> Create product</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="container">
   <form [formGroup]="myForm">
     <i class="fas fa-clipboard-list fa-3x"></i>
     <h2>Add Product</h2>
     <mat-form-field>
-      <input matInput [(ngModel)]="product.productCode" placeholder="Product Code" formControlName="productCode">
+      <input matInput [(ngModel)]="myForm.value.productCode" placeholder="Product Code" formControlName="productCode">
       <mat-error *ngIf="productCode.invalid && productCode.touched" class="has-text-danger">
           Product code field can't be empty
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput [(ngModel)]="product.productName" placeholder="Product Name" formControlName="productName">
+      <input matInput [(ngModel)]="myForm.value.productName" placeholder="Product Name" formControlName="productName">
       <mat-error *ngIf="productName.invalid && productName.touched" class="has-text-danger">
           Product name field can't be empty
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput [(ngModel)]="product.price" placeholder="Price(&euro;)" formControlName="price">
+      <input matInput [(ngModel)]="myForm.value.price" placeholder="Price(&euro;)" formControlName="price">
       <mat-error *ngIf="price.invalid && price.touched" class="has-text-danger">
           Product price field can't be empty
       </mat-error>
     </mat-form-field>
     <mat-form-field>
-        <input matInput [(ngModel)]="product.quantity" placeholder="Quantity" formControlName="quantity">
+        <input matInput [(ngModel)]="myForm.value.quantity" placeholder="Quantity" formControlName="quantity">
         <mat-error *ngIf="quantity.invalid && quantity.touched" class="has-text-danger">
             Product quantity field can't be empty
         </mat-error>
       </mat-form-field>
     <mat-form-field>
-      <textarea matInput [(ngModel)]="product.description" placeholder="Description" formControlName="description"></textarea>
+      <textarea matInput [(ngModel)]="myForm.value.description" placeholder="Description" formControlName="description"></textarea>
       <mat-error *ngIf="description.invalid && description.touched" class="has-text-danger">
           Product descreption field can't be empty
       </mat-error>
@@ -57,7 +37,7 @@
     </div>
     <hr>
     <div id="button">
-      <button mat-raised-button [disabled]="myForm.invalid || loading" color="primary" (click)="createProduct()">Add Product</button>
+      <button mat-raised-button [disabled]="myForm.invalid" color="primary" (click)="createProduct()">Add Product</button>
     </div>
   </form>
 </div>

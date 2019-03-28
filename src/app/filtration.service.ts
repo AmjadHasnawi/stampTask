@@ -12,7 +12,6 @@ export class FiltrationService {
   constructor() { }
 
   filter(products: Product[], val: string) {
-    console.log(products, val);
     if (val === "ascending") {
       return products.sort((a, b) => {
         return a.price - b.price;

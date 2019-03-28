@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Http , HttpModule} from '@angular/http' 
+import { Http , HttpModule} from '@angular/http'
+import { FormGroup } from '@angular/forms';
+
 
 import { Product } from './product';
 
@@ -47,8 +49,7 @@ export class ProductService {
       );
   }
   // Create a new product
-  createProduct(newProduct: Product): Observable<Product> {
-    console.log("BE", newProduct);
+  createProduct(newProduct: FormGroup): Observable<Product> {
     return this.http.post<Product>(this.ApiUrl + '/addProduct', newProduct )
     .pipe(
       tap(_ => console.log("cool")),
