@@ -1,4 +1,5 @@
 # compiled output
+/dist
 /tmp
 
 # dependencies
@@ -36,3 +37,4 @@ testem.log
 .DS_Store
 Thumbs.db
 
+dsa.js
